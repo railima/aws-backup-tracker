@@ -51,6 +51,3 @@ This project is a solution for automated backup of AWS S3 buckets, featuring a .
 ## Notes
 - The backup runs automatically on container startup and daily via cron.
 - A frontend can be added later to the `docker-compose.yml`.
-
----
-[🇧🇷 Português](README.md) 

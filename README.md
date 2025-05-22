@@ -1,6 +1,7 @@
 # AWS Backup Tracker
 
-[🇺🇸 English](README.en.md)
+[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/railima/aws-backup-tracker/blob/main/README.en.md)
+[![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)](https://github.com/railima/aws-backup-tracker/blob/main/README.md)
 
 Este projeto é uma solução para backup automatizado de buckets S3 da AWS, com API em .NET 8, script de backup em Bash e orquestração via Docker Compose.
 
@@ -51,6 +52,3 @@ Este projeto é uma solução para backup automatizado de buckets S3 da AWS, com
 ## Observações
 - O backup roda automaticamente ao iniciar o container e diariamente via cron.
 - O frontend pode ser adicionado futuramente ao `docker-compose.yml`.
-
----
-[🇺🇸 English](README.en.md) 
