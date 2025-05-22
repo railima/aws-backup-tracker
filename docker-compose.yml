@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ./api
+    container_name: aws-backup-tracker-api
+    ports:
+      - "5110:8080"
+    environment:
+      - AWS_ACCESS_KEY_ID=your_access_key_id
+      - AWS_SECRET_ACCESS_KEY=your_secret_access_key
+      - AWS_DEFAULT_REGION=your_region
+    volumes:
+      - ./api/scripts:/usr/local/bin
+      - ./s3_backup:/root/s3_backup
+    restart: unless-stopped
