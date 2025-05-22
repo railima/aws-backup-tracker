@@ -2,7 +2,7 @@
 
 set -e
 
-BUCKET_NAME="railima-aws-backup-tracker"
+BUCKET_NAME="nome-do-seu-bucket-aqui"
 BACKUP_DIR="$HOME/s3_backup/files"
 LOG_DIR="$HOME/s3_backup/logs"
 
@@ -14,7 +14,7 @@ verify_directory() {
 }
 
 check_aws_credentials() {
-    if ! aws sts --profile formacaoaws get-caller-identity >/dev/null 2>&1; then
+    if ! aws sts get-caller-identity >/dev/null 2>&1; then
         echo "Credenciais AWS inválidas"
         return 1
     fi
@@ -22,7 +22,7 @@ check_aws_credentials() {
 
 sync_files() {
     local output
-    output=$(aws s3 --profile formacaoaws sync "s3://$BUCKET_NAME" "$BACKUP_DIR" --delete 2>&1)
+    output=$(aws s3 sync "s3://$BUCKET_NAME" "$BACKUP_DIR" --delete 2>&1)
     echo "$output"
 }
 
